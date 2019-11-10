@@ -1,0 +1,20 @@
+
+<ng-container *ngIf="contacts$ | async as contacts">
+
+  <!-- List of Contacts -->
+  <app-contacts-row
+    *ngFor="let contact of contacts; trackBy: trackByFn"
+    [contact]="contact"
+    [isActive]="(activeContact$ | async) === contact"
+    (click)="setActiveContact(contact)"
+    (keydown.enter)="setActiveContact(contact)"
+    (keydown.space)="setActiveContact(contact)">
+  </app-contacts-row>
+
+  <!-- No Contacts Message -->
+  <p id="no-contacts-message" *ngIf="contacts.length === 0">
+    You don't have any contacts yet.
+  </p>
+
+</ng-container>
+

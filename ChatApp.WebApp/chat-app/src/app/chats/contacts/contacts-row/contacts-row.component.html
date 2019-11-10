@@ -1,0 +1,19 @@
+<!-- Strip when Chat is active -->
+<div id="active-strip" *ngIf="isActive"></div>
+
+<!-- User Avatar -->
+<app-user-avatar [user]="contact"></app-user-avatar>
+
+<div id="row-content">
+  <!-- Contact Name + Timestamp -->
+  <div class="text-row">
+    <span id="contact-name">{{ contact.recipientUser ? contact.recipientUser.displayName : contact.recipientGroup.name }}</span>
+    <span id="last-message-timestamp">{{ contact.message.createdAt | chatTimestamp }}</span>
+  </div>
+
+  <!-- Latest Message + Number of unread Messages -->
+  <div class="text-row">
+    <span id="last-message">{{ contact.message.authorName }}: {{ contact.message.textContent }}</span>
+    <div id="unread-messages-badge" *ngIf="contact.unreadMessagesCount">{{ contact.unreadMessagesCount }}</div>
+  </div>
+</div>

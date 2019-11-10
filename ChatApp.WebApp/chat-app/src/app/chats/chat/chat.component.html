@@ -1,0 +1,11 @@
+<!-- Chat Header with Contact Information -->
+<app-chat-header></app-chat-header>
+
+<!-- List of messages -->
+<app-chat-messages></app-chat-messages>
+
+<!-- Chat Footer with Message Input -->
+<app-chat-footer
+  (attachFile)="onAttachFile($event)"
+  (sendMessage)="onSendMessage($event)">
+</app-chat-footer>

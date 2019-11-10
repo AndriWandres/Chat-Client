@@ -1,0 +1,9 @@
+<app-user-avatar [user]="contact" [showOnlineIndicator]="false"></app-user-avatar>
+
+<div id="bubble" [ngClass]="{ 'anchor-left': isAnchor && direction === 'left', 'anchor-right': isAnchor && direction === 'right' }">
+  <div id="header">Rocco Shaffer</div>
+  <div id="content">
+    <span id="message">My Message</span>
+    <span id="timestamp">07:47</span>
+  </div>
+</div>
